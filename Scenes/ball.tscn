@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7l4m5lk6i7jn"]
+[gd_scene load_steps=8 format=3 uid="uid://c7l4m5lk6i7jn"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_7bxl7"]
 [ext_resource type="Texture2D" uid="uid://ctpkoo6out6hc" path="res://Assets/58-Breakout-Tiles.png" id="1_obuki"]
+[ext_resource type="AudioStream" uid="uid://b10mjuja5ygbr" path="res://Assets/SFX/Retro5.wav" id="3_lp1yt"]
+[ext_resource type="AudioStream" uid="uid://bubwilji2jh78" path="res://Assets/SFX/Retro4.wav" id="4_ou1ft"]
+[ext_resource type="AudioStream" uid="uid://bpdcgtwwdu0y4" path="res://Assets/SFX/Retro1.wav" id="5_n8kpo"]
+[ext_resource type="AudioStream" uid="uid://bqgoumvjurww0" path="res://Assets/SFX/Retro2.wav" id="6_glv8k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1uuln"]
 radius = 11.0
 
 [node name="Ball" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_7bxl7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -15,3 +20,15 @@ texture = ExtResource("1_obuki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1uuln")
+
+[node name="PaddleSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lp1yt")
+
+[node name="WallSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ou1ft")
+
+[node name="BrickSFX1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n8kpo")
+
+[node name="BrickSFX2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_glv8k")

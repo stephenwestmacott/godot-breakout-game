@@ -1,17 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://cx5koi2itc5w"]
 
 [ext_resource type="Script" path="res://Scripts/brick.gd" id="1_10ily"]
-[ext_resource type="Texture2D" uid="uid://drjvxtwtt6icm" path="res://Assets/01-Breakout-Tiles.png" id="1_mqbi5"]
+[ext_resource type="Texture2D" uid="uid://drjvxtwtt6icm" path="res://Assets/Bricks/01-Breakout-Tiles.png" id="2_xtltm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0ffw"]
-size = Vector2(72, 24)
+size = Vector2(96, 32)
 
 [node name="Brick" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_10ily")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1875, 0.1875)
-texture = ExtResource("1_mqbi5")
+position = Vector2(-9.53674e-07, -3.57628e-07)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_xtltm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r0ffw")

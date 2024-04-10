@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2vt7f768o0s0"]
+
+[ext_resource type="Script" path="res://Scripts/tri_ball_pwr.gd" id="1_4kx3g"]
+[ext_resource type="Texture2D" uid="uid://bnml7wju6xwp7" path="res://Assets/Power-Ups/43-Breakout-Tiles.png" id="1_hvtmc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xr4to"]
+radius = 12.0
+height = 92.0
+
+[node name="tri_ball_pwr" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_4kx3g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("1_hvtmc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xr4to")
